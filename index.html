@@ -61,7 +61,7 @@ h2.titulo em{font-style:normal;color:var(--verde)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:flex-end;padding:120px 40px 72px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=85') center/cover no-repeat;transform:scale(1.04);transition:transform 8s ease}
+.hero-bg{position:absolute;inset:0;background:url('hero-residence.webp') center/cover no-repeat;transform:scale(1.04);transition:transform 8s ease}
 .hero-bg:hover{transform:scale(1)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,26,24,.1) 0%,rgba(26,26,24,.82) 100%)}
 .hero-content{position:relative;z-index:2;max-width:680px}
@@ -201,10 +201,12 @@ h2.titulo em{font-style:normal;color:var(--verde)}
 <!-- HEADER -->
 <header class="header">
   <a href="#" class="logo" aria-label="Brasil Verde Toldos">
-    <span class="logo-brasil">Brasil</span>
-    <span class="logo-verde">Verde</span>
-    <span class="logo-tag">Toldos Residenciais</span>
-  </a>
+  <img 
+    src="/logo_brasilverde01a.png" 
+    alt="Brasil Verde Toldos"
+    style="width: 160px; height: auto;"
+  >
+</a>
   <nav class="header-nav" aria-label="Contato">
     <a href="tel:+5516993303400" class="header-tel">(16) 99330-3400</a>
     <a href="https://wa.me/5516993303400?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20de%20toldo."
@@ -264,10 +266,11 @@ h2.titulo em{font-style:normal;color:var(--verde)}
   <div class="container">
     <div class="produtos-grid">
 
-      <div class="produto-card">
-        <div class="produto-img" style="background-image:url('https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=800&q=80')"></div>
+      <!-- toldo articulado -->
+      <div class="produto-card"> 
+       <div class="produto-img" style="background-image:url('toldos_pagina002.webp')"></div>
         <div class="produto-overlay">
-          <p class="produto-num">Modelo 01</p>
+          <!-- <p class="produto-num">RESIDENCIAL | COMERCIAL</p> -->
           <h3 class="produto-nome">Toldo<br />Articulado</h3>
           <p class="produto-desc">Ideal para varandas e áreas de lazer. Abre e fecha com facilidade, protege contra sol e chuva sem ocupar espaço quando recolhido.</p>
           <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20Articulado%20e%20gostaria%20de%20um%20orçamento."
@@ -277,10 +280,11 @@ h2.titulo em{font-style:normal;color:var(--verde)}
         </div>
       </div>
 
+      <!-- toldo rolô -->
       <div class="produto-card">
-        <div class="produto-img" style="background-image:url('https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80')"></div>
+        <div class="produto-img" style="background-image:url('toldos_pagina003.webp')"></div>
         <div class="produto-overlay">
-          <p class="produto-num">Modelo 02</p>
+          <!-- <p class="produto-num">Modelo 02</p> -->   
           <h3 class="produto-nome">Toldo<br />Rolô</h3>
           <p class="produto-desc">Perfeito para janelas e fachadas. Visual limpo e moderno, com acionamento manual ou motorizado.</p>
           <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20Rolô%20e%20gostaria%20de%20um%20orçamento."
@@ -290,12 +294,13 @@ h2.titulo em{font-style:normal;color:var(--verde)}
         </div>
       </div>
 
+      <!-- toldo de braço -->
       <div class="produto-card">
-        <div class="produto-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
+        <div class="produto-img" style="background-image:url('professional-item1.jpg')"></div>
         <div class="produto-overlay">
-          <p class="produto-num">Modelo 03</p>
-          <h3 class="produto-nome">Toldo de<br />Braço</h3>
-          <p class="produto-desc">Combina proteção e flexibilidade. Os braços articulados permitem diferentes ângulos de inclinação conforme o sol.</p>
+          <!-- <p class="produto-num">Modelo 03</p> -->
+          <h3 class="produto-nome">Paleta de<br />Cores</h3>
+          <p class="produto-desc">O toldo de acordo com o seu ambiente, diversas cores e tons para que harmonize perfeitamente com a sua área.</p>
           <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20de%20Braço%20e%20gostaria%20de%20um%20orçamento."
              target="_blank" rel="noreferrer" class="produto-cta">
             Pedir orçamento →
@@ -315,7 +320,7 @@ h2.titulo em{font-style:normal;color:var(--verde)}
   </div>
   <div class="container">
     <div class="destaque-grid">
-      <div class="destaque-img" style="background-image:url('https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=900&q=80')"></div>
+      <div class="destaque-img" style="background-image:url('toldos_pagina001.webp')"></div>
       <div class="destaque-info">
         <p class="destaque-label">Toldo Articulado</p>
         <h3>Conforto<br />sem obra.</h3>
@@ -373,7 +378,7 @@ h2.titulo em{font-style:normal;color:var(--verde)}
     <h2 class="titulo" style="color:#fff">Quem fabrica,<br /><em>entende.</em></h2>
     <p class="sub">Mais de 20 anos produzindo toldos para Ribeirão Preto e todo o Brasil.</p>
     <div class="porque-grid">
-      <div class="porque-img" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80')"></div>
+      <div class="porque-img" style="background-image:url('foto_brasilverde.webp')"></div>
       <ul class="porque-lista">
         <li class="porque-item">
           <div class="porque-ico">📐</div>
@@ -408,85 +413,7 @@ h2.titulo em{font-style:normal;color:var(--verde)}
   </div>
 </section>
 
-<!-- GALERIA -->
-<section class="galeria" id="projetos">
-  <div class="container">
-    <div class="eyebrow">Projetos entregues</div>
-    <h2 class="titulo">Veja na<br /><em>prática.</em></h2>
-    <p class="sub">Instalações residenciais em Ribeirão Preto e região.</p>
-    <div class="galeria-grid">
-      <div class="galeria-item" data-label="Toldo articulado — varanda" style="min-height:440px">
-        <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=900&q=80');min-height:440px"></div>
-      </div>
-      <div class="galeria-item" data-label="Toldo rolô — janela">
-        <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80')"></div>
-      </div>
-      <div class="galeria-item" data-label="Toldo de braço — fachada">
-        <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"></div>
-      </div>
-      <div class="galeria-item" data-label="Varanda integrada">
-        <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80')"></div>
-      </div>
-      <div class="galeria-item" data-label="Área gourmet coberta">
-        <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1544547571-5945ed0c4ecd?w=600&q=80')"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos" id="depoimentos">
-  <div class="container">
-    <div class="eyebrow">O que dizem nossos clientes</div>
-    <h2 class="titulo">Quem instalou,<br /><em>aprovou.</em></h2>
-    <div class="depo-grid">
-
-      <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Instalaram o toldo articulado na minha varanda em tempo recorde. Material de ótima qualidade, muito melhor do que eu esperava pelo preço."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">MF</div>
-          <div>
-            <p class="depo-nome">Marcos Ferreira</p>
-            <p class="depo-loc">Ribeirão Preto · Varanda</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Atendimento impecável. Mandei a medida pelo WhatsApp, recebi o orçamento no mesmo dia e em duas semanas estava instalado. Super recomendo!"</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">CP</div>
-          <div>
-            <p class="depo-nome">Carla Pinheiro</p>
-            <p class="depo-loc">Ribeirão Preto · Fachada</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Já é o segundo toldo que faço com a Brasil Verde. O primeiro dura mais de 8 anos sem problema. Qualidade mesmo, não tem comparação."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">RL</div>
-          <div>
-            <p class="depo-nome">Roberto Lima</p>
-            <p class="depo-loc">Sertãozinho · Área gourmet</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="depo-google" style="margin-top:32px;align-items:center;gap:16px">
-      <span class="depo-google-nota">5.0</span>
-      <div>
-        <div style="color:var(--verde);font-size:18px;letter-spacing:2px">★★★★★</div>
-        <p class="depo-google-label">Avaliação no Google</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA BANNER -->
 <section class="cta-banner">
@@ -507,9 +434,12 @@ h2.titulo em{font-style:normal;color:var(--verde)}
 <!-- FOOTER -->
 <footer class="footer">
   <a href="#" class="logo" aria-label="Brasil Verde Toldos">
-    <span class="logo-brasil">Brasil</span>
-    <span class="logo-verde">Verde</span>
-  </a>
+  <img 
+    src="/logo_brasilverde002.png" 
+    alt="Brasil Verde Toldos"
+    width="160"
+  >
+</a>
   <div class="footer-info">
     Toldos Residenciais sob Medida<br />
     R. Amparo, 596 — Vila Mariana, Ribeirão Preto - SP
