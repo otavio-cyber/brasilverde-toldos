@@ -215,8 +215,9 @@
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center;
   }
-  .cores-visual { border-radius: var(--radius-lg); overflow: hidden; }
-  .cores-visual img { width: 100%; height: 420px; object-fit: cover; }
+  .cores-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cores-visual-item { border-radius: var(--radius-lg); overflow: hidden; }
+  .cores-visual-item img { width: 100%; height: 420px; object-fit: cover; object-position: center; }
   .cores-content { padding: 0; }
   .cores-chips {
     display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; margin-bottom: 32px;
@@ -307,6 +308,8 @@
     .produtos-header { grid-template-columns: 1fr; }
     .cards-grid { grid-template-columns: 1fr 1fr; }
     .cores-inner { grid-template-columns: 1fr; gap: 40px; }
+    .cores-visual { grid-template-columns: 1fr 1fr; }
+    .cores-visual-item img { height: 220px; }
     .como-grid { grid-template-columns: 1fr; gap: 40px; }
     .como-visual { display: none; }
     .diff-grid { grid-template-columns: 1fr 1fr; }
@@ -394,14 +397,14 @@
   </div>
 </section>
 
-<!-- GALERIA TIRA — trabalhos reais -->
+<!-- GALERIA TIRA — projetos distintos -->
 <section class="galeria" aria-label="Galeria de projetos">
   <div class="galeria-grid">
-    <div class="galeria-item"><img src="residencial-02.png" alt="Toldo residencial" loading="lazy"></div>
-    <div class="galeria-item"><img src="articulacao-01.png" alt="Toldo articulado" loading="lazy"></div>
-    <div class="galeria-item"><img src="comercial-01.png"  alt="Toldo comercial restaurante" loading="lazy"></div>
-    <div class="galeria-item"><img src="fachada-01.png"    alt="Toldo em fachada comercial" loading="lazy"></div>
-    <div class="galeria-item"><img src="comercial-02.png"  alt="Toldo para terraço" loading="lazy"></div>
+    <div class="galeria-item"><img src="fachada-cafe.png"       alt="Toldo em café com mesas externas" loading="lazy"></div>
+    <div class="galeria-item"><img src="articulacao-01.png"     alt="Toldo articulado — detalhe do braço" loading="lazy"></div>
+    <div class="galeria-item"><img src="fachada-loja.png"       alt="Toldo em fachada de loja de moda" loading="lazy"></div>
+    <div class="galeria-item"><img src="fachada-escritorio.png" alt="Toldo para fachada de escritório" loading="lazy"></div>
+    <div class="galeria-item"><img src="comercial-02.png"       alt="Toldo em terraço de restaurante" loading="lazy"></div>
   </div>
 </section>
 
@@ -458,7 +461,7 @@
          href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20Comercial."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="comercial-03.png" alt="Toldo comercial" loading="lazy">
+          <img src="fachada-cafe.png" alt="Toldo comercial em café" loading="lazy">
         </div>
         <div class="card-body">
           <span class="tag card-tag">Comercial</span>
@@ -492,7 +495,7 @@
          href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Cobertura%20e%20Sombra."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="fachada-02.png" alt="Cobertura e sombra" loading="lazy">
+          <img src="fachada-loja.png" alt="Toldo em loja comercial" loading="lazy">
         </div>
         <div class="card-body">
           <span class="tag card-tag">Coberturas</span>
@@ -509,7 +512,7 @@
          href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20para%20Fachada."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="fachada-03.png" alt="Toldo para fachada" loading="lazy">
+          <img src="fachada-escritorio.png" alt="Toldo para fachada de escritório" loading="lazy">
         </div>
         <div class="card-body">
           <span class="tag card-tag">Fachadas</span>
@@ -531,7 +534,12 @@
   <div class="container">
     <div class="cores-inner">
       <div class="cores-visual">
-        <img src="cores-01.png" alt="Amostras de cores de lona disponíveis" loading="lazy">
+        <div class="cores-visual-item">
+          <img src="cores-01.png" alt="Amostras de cores de lona disponíveis" loading="lazy">
+        </div>
+        <div class="cores-visual-item">
+          <img src="cores-02.png" alt="Paleta de cores de toldos e lonas" loading="lazy">
+        </div>
       </div>
       <div class="cores-content">
         <p class="section-label">Variedade de cores</p>
