@@ -1,474 +1,723 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brasil Verde Toldos | Toldos Residenciais sob Medida — Ribeirão Preto</title>
-<meta name="description" content="Toldos articulados, rolô e de braço sob medida. Proteção, conforto e beleza para varandas, janelas e fachadas. Atendemos Ribeirão Preto e todo o Brasil." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brasil Verde Toldos — Toldos e Coberturas em Ribeirão Preto</title>
+<meta name="description" content="Toldos, coberturas e capas de piscina sob medida em Ribeirão Preto. Atendemos todo o Brasil. Solicite um orçamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',sans-serif;color:#1a1a18;background:#fff;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:none;background:none}
-img{display:block;max-width:100%;height:auto}
+  /* ── TOKENS ─────────────────────────────────────────────── */
+  :root {
+    --verde:   #3aad3c;
+    --verde-d: #2d8a2f;
+    --branco:  #ffffff;
+    --off:     #f7f8f5;
+    --borda:   #e4e8df;
+    --cinza:   #6b7268;
+    --texto:   #1c1f1a;
+    --radius:  10px;
+    --radius-lg: 16px;
+    --sombra:  0 2px 16px rgba(0,0,0,0.07);
+    --sombra-md: 0 4px 32px rgba(0,0,0,0.10);
+    --max:     1160px;
+    --wpp:     #25D366;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--branco);
+    color: var(--texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
 
-/* ── TOKENS ── */
-:root{
-  --verde:#3db33f;
-  --verde-esc:#1e6b20;
-  --preto:#1a1a18;
-  --cinza:#4a4a47;
-  --cinza-leve:#f7f5f0;
-  --kraft:#f2ede4;
-  --branco:#fff;
-  --wpp:#25d366;
-  --r:6px;
-  --max:1200px;
-}
+  /* ── UTILITÁRIOS ────────────────────────────────────────── */
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--verde);
+    background: rgba(58,173,60,.09);
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--verde); margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -.03em; color: var(--texto);
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--cinza);
+    line-height: 1.7; max-width: 520px;
+    margin-top: 14px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: inherit; font-weight: 700; font-size: 14px;
+    border: none; cursor: pointer; border-radius: var(--radius);
+    padding: 14px 24px; transition: all .2s; text-decoration: none;
+  }
+  .btn-verde { background: var(--verde); color: #fff; }
+  .btn-verde:hover { background: var(--verde-d); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--texto);
+    border: 1.5px solid var(--borda);
+  }
+  .btn-outline:hover { border-color: var(--verde); color: var(--verde); }
 
-/* ── UTILS ── */
-.container{max-width:var(--max);margin:0 auto;padding:0 40px}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--verde);display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--verde);flex-shrink:0}
-h2.titulo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);text-transform:uppercase;line-height:.95;letter-spacing:-.5px;margin-bottom:16px}
-h2.titulo em{font-style:normal;color:var(--verde)}
-.sub{font-size:16px;color:var(--cinza);line-height:1.65;max-width:520px}
+  /* ── HEADER ─────────────────────────────────────────────── */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borda);
+  }
+  .header-inner {
+    display: flex; align-items: center;
+    gap: 32px; height: 72px;
+    max-width: var(--max); margin: 0 auto; padding: 0 24px;
+  }
+  .header-logo { flex-shrink: 0; }
+  .header-logo img { height: 44px; width: auto; }
+  .header-nav {
+    display: flex; align-items: center; gap: 28px;
+    margin-left: auto;
+  }
+  .header-nav a {
+    font-size: 13.5px; font-weight: 500; color: var(--cinza);
+    transition: color .2s;
+  }
+  .header-nav a:hover { color: var(--texto); }
+  .header-cta { margin-left: 8px; }
 
-/* ── BOTÕES ── */
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px;border-radius:var(--r);transition:all .22s;white-space:nowrap}
-.btn-verde{background:var(--verde);color:#fff}.btn-verde:hover{background:var(--verde-esc)}
-.btn-preto{background:var(--preto);color:#fff}.btn-preto:hover{background:var(--verde-esc)}
-.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.btn-branco{background:#fff;color:var(--preto)}.btn-branco:hover{background:var(--kraft)}
+  /* ── HERO ────────────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+  }
+  .hero-left {
+    background: var(--off);
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 40px;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--cinza); margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 24px; height: 2px;
+    background: var(--verde);
+  }
+  .hero-h1 {
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -.04em; color: var(--texto);
+    margin-bottom: 20px;
+  }
+  .hero-h1 em { color: var(--verde); font-style: normal; }
+  .hero-desc {
+    font-size: 1rem; color: var(--cinza);
+    line-height: 1.7; max-width: 420px;
+    margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-stats {
+    display: flex; gap: 32px;
+    margin-top: 48px; padding-top: 32px;
+    border-top: 1px solid var(--borda);
+  }
+  .hero-stat-num {
+    font-size: 1.6rem; font-weight: 800;
+    color: var(--texto); letter-spacing: -.03em;
+  }
+  .hero-stat-label {
+    font-size: 11px; color: var(--cinza);
+    text-transform: uppercase; letter-spacing: .07em;
+    margin-top: 2px;
+  }
+  .hero-right {
+    position: relative; overflow: hidden;
+    min-height: 500px;
+  }
+  .hero-right img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+  }
+  .hero-badge {
+    position: absolute; bottom: 28px; left: 28px;
+    background: #fff; border-radius: var(--radius);
+    padding: 14px 20px;
+    box-shadow: var(--sombra-md);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-badge-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--verde);
+    box-shadow: 0 0 0 3px rgba(58,173,60,.2);
+  }
+  .hero-badge span { font-size: 13px; font-weight: 600; color: var(--texto); }
 
-/* ── HEADER ── */
-.header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(26,26,24,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.logo{display:flex;align-items:center;gap:4px;text-decoration:none}
-.logo-brasil{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--verde);text-transform:uppercase;letter-spacing:-.5px;line-height:1}
-.logo-verde{background:var(--verde-esc);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;font-style:italic;padding:2px 10px 2px 8px;margin-left:4px;clip-path:polygon(6px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);letter-spacing:.3px;line-height:1.35}
-.logo-tag{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.05em;margin-left:10px;display:none}
-@media(min-width:600px){.logo-tag{display:block}}
-.header-nav{display:flex;align-items:center;gap:10px}
-.header-tel{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;display:none}
-@media(min-width:700px){.header-tel{display:block}}
-.btn-wpp-header{background:var(--wpp);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:var(--r);display:inline-flex;align-items:center;gap:8px;transition:background .2s}
-.btn-wpp-header:hover{background:#1da851}
+  /* ── GALERIA HERO ────────────────────────────────────────── */
+  .galeria { background: var(--branco); padding: 48px 0; }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .galeria-item {
+    aspect-ratio: 4/3; overflow: hidden;
+    border-radius: var(--radius);
+  }
+  .galeria-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+  }
+  .galeria-item:hover img { transform: scale(1.05); }
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:flex-end;padding:120px 40px 72px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('hero-residence.webp') center/cover no-repeat;transform:scale(1.04);transition:transform 8s ease}
-.hero-bg:hover{transform:scale(1)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,26,24,.1) 0%,rgba(26,26,24,.82) 100%)}
-.hero-content{position:relative;z-index:2;max-width:680px}
-.hero-kicker{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);display:flex;align-items:center;gap:8px;margin-bottom:18px}
-.hero-kicker::before{content:'';display:block;width:32px;height:2px;background:var(--verde)}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(56px,8vw,96px);line-height:.92;text-transform:uppercase;color:#fff;letter-spacing:-1px;margin-bottom:22px}
-.hero h1 em{font-style:normal;color:var(--verde)}
-.hero-sub{font-size:17px;color:rgba(255,255,255,.82);line-height:1.6;max-width:460px;margin-bottom:36px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.hero-badges{display:flex;gap:20px;margin-top:48px;flex-wrap:wrap}
-.hero-badge{display:flex;align-items:center;gap:10px}
-.hero-badge-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--verde);line-height:1}
-.hero-badge-label{font-size:12px;color:rgba(255,255,255,.6);line-height:1.3;max-width:80px}
-.hero-scroll{position:absolute;bottom:32px;right:48px;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.12em;text-transform:uppercase;z-index:2}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrollpulse 2s ease-in-out infinite}
-@keyframes scrollpulse{0%,100%{opacity:.4}50%{opacity:1}}
+  /* ── PRODUTOS ────────────────────────────────────────────── */
+  .produtos { background: var(--off); padding: 96px 0; }
+  .produtos-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 32px; align-items: end;
+    margin-bottom: 56px;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+    cursor: pointer;
+    text-decoration: none; color: inherit;
+    display: block;
+  }
+  .card:hover {
+    box-shadow: var(--sombra-md);
+    transform: translateY(-3px);
+  }
+  .card-img { aspect-ratio: 4/3; overflow: hidden; }
+  .card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .45s ease;
+  }
+  .card:hover .card-img img { transform: scale(1.04); }
+  .card-body { padding: 24px; }
+  .card-tag { margin-bottom: 10px; }
+  .card-title {
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--texto); margin-bottom: 8px;
+    letter-spacing: -.02em;
+  }
+  .card-desc { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .card-cta {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: var(--verde);
+    margin-top: 16px; transition: gap .2s;
+  }
+  .card:hover .card-cta { gap: 10px; }
 
-/* ── PRODUTOS ── */
-.produtos{padding:96px 0;background:var(--cinza-leve)}
-.produtos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-radius:var(--r);overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,.12)}
-.produto-card{position:relative;overflow:hidden;cursor:pointer}
-.produto-card:hover .produto-img{transform:scale(1.07)}
-.produto-img{height:380px;background-size:cover;background-position:center;transition:transform .55s ease}
-.produto-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,24,.9) 0%,rgba(26,26,24,.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 28px;transition:background .3s}
-.produto-card:hover .produto-overlay{background:linear-gradient(to top,rgba(30,107,32,.92) 0%,rgba(26,26,24,.2) 60%)}
-.produto-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:.2em;color:var(--verde);text-transform:uppercase;margin-bottom:8px}
-.produto-card:hover .produto-num{color:#a8f0ab}
-.produto-nome{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:#fff;line-height:.95;letter-spacing:-.3px;margin-bottom:10px}
-.produto-desc{font-size:13px;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:20px;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s}
-.produto-card:hover .produto-desc{max-height:100px;opacity:1}
-.produto-cta{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);opacity:0;transform:translateY(8px);transition:all .3s}
-.produto-card:hover .produto-cta{opacity:1;transform:translateY(0)}
-.produto-card:hover .produto-cta{color:#a8f0ab}
+  /* ── COMO FUNCIONA ───────────────────────────────────────── */
+  .como-funciona { background: var(--branco); padding: 96px 0; }
+  .como-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .steps { margin-top: 40px; display: flex; flex-direction: column; }
+  .step {
+    display: flex; gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--borda);
+  }
+  .step:first-child { border-top: 1px solid var(--borda); }
+  .step-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--verde); color: #fff;
+    font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-body h4 {
+    font-size: 15px; font-weight: 700;
+    color: var(--texto); margin-bottom: 6px;
+  }
+  .step-body p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .como-visual {
+    border-radius: var(--radius-lg); overflow: hidden;
+  }
+  .como-visual img {
+    width: 100%; height: 460px; object-fit: cover;
+  }
 
-/* ── PRODUTO DESTAQUE ── */
-.destaque{padding:96px 0;background:var(--branco)}
-.destaque-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--r);overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,.1);margin-top:56px}
-.destaque-img{background-size:cover;background-position:center;min-height:500px}
-.destaque-info{background:var(--preto);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
-.destaque-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--verde);display:flex;align-items:center;gap:6px;margin-bottom:14px}
-.destaque-label::before{content:'';width:20px;height:2px;background:var(--verde)}
-.destaque-info h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4vw,52px);text-transform:uppercase;color:#fff;line-height:.95;letter-spacing:-.5px;margin-bottom:16px}
-.destaque-info p{font-size:15px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:28px}
-.destaque-items{list-style:none;margin-bottom:36px;display:flex;flex-direction:column;gap:10px}
-.destaque-items li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(255,255,255,.7);line-height:1.45}
-.destaque-items li::before{content:'';width:18px;height:2px;background:var(--verde);flex-shrink:0;margin-top:8px}
+  /* ── DIFERENCIAIS ────────────────────────────────────────── */
+  .diferenciais { background: var(--off); padding: 96px 0; }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  .diff-card {
+    background: var(--branco);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    border-top: 3px solid var(--verde);
+  }
+  .diff-icon {
+    width: 44px; height: 44px;
+    background: rgba(58,173,60,.1);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; color: var(--verde);
+  }
+  .diff-card h4 {
+    font-size: 15px; font-weight: 700;
+    color: var(--texto); margin-bottom: 8px;
+  }
+  .diff-card p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
 
-/* ── COMO FUNCIONA ── */
-.como{padding:96px 0;background:var(--kraft)}
-.como-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--verde);border-radius:var(--r);overflow:hidden;margin-top:56px}
-.como-step{background:var(--branco);padding:40px 32px;position:relative}
-.como-step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--verde);line-height:1;margin-bottom:16px;opacity:.18;position:absolute;top:24px;right:28px}
-.como-step h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.03em;color:var(--preto);margin-bottom:10px}
-.como-step p{font-size:14px;color:var(--cinza);line-height:1.6}
-.como-step-ico{width:44px;height:44px;background:var(--verde);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+  /* ── CTA BANNER ──────────────────────────────────────────── */
+  .cta-banner { background: var(--verde); padding: 80px 0; }
+  .cta-banner-inner {
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  }
+  .cta-banner h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 800; color: #fff;
+    letter-spacing: -.03em; line-height: 1.15;
+  }
+  .cta-banner p { font-size: 15px; color: rgba(255,255,255,.8); margin-top: 8px; }
+  .btn-white { background: #fff; color: var(--verde-d); font-weight: 800; }
+  .btn-white:hover { background: var(--off); transform: translateY(-1px); }
+  .btn-ghost {
+    background: rgba(255,255,255,.15); color: #fff;
+    border: 1.5px solid rgba(255,255,255,.35);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,.25); }
 
-/* ── POR QUE NÓS ── */
-.porque{padding:96px 0;background:var(--preto)}
-.porque .eyebrow{color:var(--verde)}
-.porque h2.titulo{color:#fff}
-.porque .sub{color:rgba(255,255,255,.6)}
-.porque-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px}
-.porque-img{border-radius:var(--r);overflow:hidden;height:520px;background-size:cover;background-position:center;box-shadow:12px 12px 0 rgba(61,179,63,.25)}
-.porque-lista{list-style:none;display:flex;flex-direction:column;gap:0}
-.porque-item{display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.porque-item:last-child{border-bottom:none}
-.porque-ico{width:40px;height:40px;background:rgba(61,179,63,.15);border:1px solid rgba(61,179,63,.3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
-.porque-item h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;text-transform:uppercase;color:#fff;letter-spacing:.03em;margin-bottom:4px}
-.porque-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.55}
+  /* ── FOOTER ──────────────────────────────────────────────── */
+  .footer {
+    background: var(--branco);
+    border-top: 1px solid var(--borda);
+    padding: 48px 0 32px;
+  }
+  .footer-inner {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  }
+  .footer-logo img { height: 40px; width: auto; margin-bottom: 12px; }
+  .footer-tagline { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+  .footer-links a {
+    font-size: 13px; color: var(--cinza); font-weight: 500;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--texto); }
+  .footer-copy {
+    text-align: center; margin-top: 32px;
+    padding-top: 24px; border-top: 1px solid var(--borda);
+    font-size: 12px; color: var(--cinza);
+  }
 
-/* ── DEPOIMENTOS ── */
-.depoimentos{padding:96px 0;background:var(--cinza-leve)}
-.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.depo-card{background:var(--branco);border-radius:var(--r);padding:32px 28px;border-top:3px solid var(--verde);box-shadow:0 2px 16px rgba(0,0,0,.06)}
-.depo-stars{color:var(--verde);font-size:16px;letter-spacing:2px;margin-bottom:14px}
-.depo-texto{font-size:14px;color:var(--cinza);line-height:1.65;margin-bottom:20px;font-style:italic}
-.depo-autor{display:flex;align-items:center;gap:12px}
-.depo-avatar{width:40px;height:40px;border-radius:50%;background:var(--verde);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.depo-nome{font-weight:600;font-size:13px;color:var(--preto)}
-.depo-loc{font-size:11px;color:var(--cinza);margin-top:2px}
-.depo-google{display:flex;align-items:center;gap:6px;margin-top:32px}
-.depo-google-badge{background:#fff;border:1px solid #e0e0e0;border-radius:var(--r);padding:8px 14px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--cinza)}
-.depo-google-nota{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--preto)}
-.depo-google-label{font-size:12px;color:var(--cinza)}
+  /* ── WPP FLOAT ───────────────────────────────────────────── */
+  .wpp-float {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: var(--wpp); color: #fff;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,.45);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
 
-/* ── GALERIA ── */
-.galeria{padding:96px 0;background:var(--branco)}
-.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:12px;margin-top:56px}
-.galeria-item{border-radius:var(--r);overflow:hidden;position:relative}
-.galeria-item:nth-child(1){grid-column:span 2;grid-row:span 2}
-.galeria-img{width:100%;height:100%;min-height:220px;background-size:cover;background-position:center;transition:transform .55s ease}
-.galeria-item:hover .galeria-img{transform:scale(1.05)}
-.galeria-item::after{content:attr(data-label);position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(26,26,24,.85),transparent);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#fff}
-
-/* ── CTA BANNER ── */
-.cta-banner{padding:96px 40px;background:var(--verde);text-align:center}
-.cta-banner h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(42px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.93;letter-spacing:-1px;margin-bottom:18px}
-.cta-banner p{font-size:17px;color:rgba(255,255,255,.87);margin-bottom:40px}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* ── FOOTER ── */
-.footer{background:var(--preto);padding:48px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;border-top:1px solid rgba(255,255,255,.06)}
-.footer-info{color:rgba(255,255,255,.4);font-size:12px;line-height:1.7}
-.footer-contatos{display:flex;flex-direction:column;gap:6px}
-.footer-contatos a{color:rgba(255,255,255,.6);font-size:13px;display:inline-flex;align-items:center;gap:8px;transition:color .2s}
-.footer-contatos a:hover{color:var(--verde)}
-.footer-links{display:flex;gap:20px}
-.footer-links a{color:rgba(255,255,255,.4);font-size:12px;transition:color .2s}
-.footer-links a:hover{color:rgba(255,255,255,.8)}
-
-/* ── WPP FLOAT ── */
-.wpp-float{position:fixed;bottom:28px;right:28px;z-index:300;width:58px;height:58px;border-radius:50%;background:var(--wpp);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.45);transition:transform .2s,box-shadow .2s}
-.wpp-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55)}
-.wpp-float svg{width:28px;height:28px;fill:#fff}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .header{padding:14px 24px}
-  .hero{padding:100px 24px 64px;min-height:85vh}
-  .container{padding:0 24px}
-  .produtos-grid,.depo-grid,.como-grid,.galeria-grid{grid-template-columns:1fr}
-  .galeria-item:nth-child(1){grid-column:span 1;grid-row:span 1}
-  .destaque-grid,.porque-grid{grid-template-columns:1fr}
-  .destaque-img,.porque-img{min-height:280px;height:280px}
-  .destaque-info{padding:36px 28px}
-  .footer{flex-direction:column;align-items:flex-start;padding:32px 24px}
-  .cta-banner{padding:64px 24px}
-}
-@media(prefers-reduced-motion:reduce){
-  .scroll-line{animation:none}
-  *{transition-duration:.01ms!important}
-}
+  /* ── MOBILE ──────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .header-nav { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 64px 24px; }
+    .hero-right { min-height: 320px; }
+    .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+    .galeria-item:nth-child(n+4) { display: none; }
+    .produtos-header { grid-template-columns: 1fr; }
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    .como-grid { grid-template-columns: 1fr; gap: 40px; }
+    .como-visual { display: none; }
+    .diff-grid { grid-template-columns: 1fr 1fr; }
+    .cta-banner-inner { flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; gap: 24px; }
+  }
+  @media (max-width: 560px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .hero-h1 { font-size: 2.1rem; }
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+    .galeria-item:nth-child(n+3) { display: none; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <a href="#" class="logo" aria-label="Brasil Verde Toldos">
-  <img 
-    src="/logo_brasilverde01a.png" 
-    alt="Brasil Verde Toldos"
-    style="width: 160px; height: auto;"
-  >
-</a>
-  <nav class="header-nav" aria-label="Contato">
-    <a href="tel:+5516993303400" class="header-tel">(16) 99330-3400</a>
-    <a href="https://wa.me/5516993303400?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20de%20toldo."
-       target="_blank" rel="noreferrer" class="btn-wpp-header">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="header-inner">
+    <a class="header-logo" href="/" aria-label="Brasil Verde Toldos — início">
+      <img src="logo_brasilverde002.png" alt="Brasil Verde Toldos">
+    </a>
+    <nav class="header-nav" aria-label="Navegação">
+      <a href="#produtos">Produtos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-verde header-cta"
+       href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
+       target="_blank" rel="noreferrer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Pedir orçamento
     </a>
-  </nav>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-kicker">Ribeirão Preto · Todo o Brasil</p>
-    <h1>Toldos que<br /><em>protegem</em><br />e encantam.</h1>
-    <p class="hero-sub">Articulados, rolô e de braço. Fabricados sob medida, instalados com precisão — para sua varanda, janela ou fachada.</p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/5516993303400?text=Olá!%20Quero%20um%20orçamento%20de%20toldo%20residencial."
-         target="_blank" rel="noreferrer" class="btn btn-verde">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Ribeirão Preto · Atendemos todo o Brasil</p>
+    <h1 class="hero-h1">
+      Toldos e coberturas<br>
+      que <em>transformam</em><br>
+      seu espaço
+    </h1>
+    <p class="hero-desc">
+      Soluções sob medida para sua casa: toldos, capas de piscina, policarbonato e coberturas com instalação profissional e garantia de qualidade.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-verde"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20toldo%20ou%20cobertura."
+         target="_blank" rel="noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Solicitar orçamento
       </a>
-      <a href="#produtos" class="btn btn-outline">Ver modelos</a>
+      <a class="btn btn-outline" href="#produtos">Ver produtos</a>
     </div>
-    <div class="hero-badges">
-      <div class="hero-badge">
-        <span class="hero-badge-num">+20</span>
-        <span class="hero-badge-label">anos de mercado</span>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">+20</div>
+        <div class="hero-stat-label">Anos de mercado</div>
       </div>
-      <div style="width:1px;height:40px;background:rgba(255,255,255,.15)"></div>
-      <div class="hero-badge">
-        <span class="hero-badge-num">+30</span>
-        <span class="hero-badge-label">cores disponíveis</span>
+      <div>
+        <div class="hero-stat-num">+30</div>
+        <div class="hero-stat-label">Cores de lona</div>
       </div>
-      <div style="width:1px;height:40px;background:rgba(255,255,255,.15)"></div>
-      <div class="hero-badge">
-        <span class="hero-badge-num">BR</span>
-        <span class="hero-badge-label">entrega em todo Brasil</span>
+      <div>
+        <div class="hero-stat-num">BR</div>
+        <div class="hero-stat-label">Entregamos no Brasil todo</div>
       </div>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="scroll-line"></div>
-    <span>Role</span>
+  <div class="hero-right">
+    <img src="foto_brasilverde.webp" alt="Trabalho Brasil Verde Toldos">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Orçamento grátis pelo WhatsApp</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA DE TRABALHOS -->
+<section class="galeria">
+  <div class="container">
+    <div class="galeria-grid">
+      <div class="galeria-item"><img src="toldos_pagina001.webp" alt="Trabalho Brasil Verde 1" loading="lazy"></div>
+      <div class="galeria-item"><img src="toldos_pagina002.webp" alt="Trabalho Brasil Verde 2" loading="lazy"></div>
+      <div class="galeria-item"><img src="toldos_pagina003.webp" alt="Trabalho Brasil Verde 3" loading="lazy"></div>
+      <div class="galeria-item"><img src="toldos_pagina004.webp" alt="Trabalho Brasil Verde 4" loading="lazy"></div>
+      <div class="galeria-item"><img src="toldos_pagina005.webp" alt="Trabalho Brasil Verde 5" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
 <!-- PRODUTOS -->
 <section class="produtos" id="produtos">
   <div class="container">
-    <div class="eyebrow">Nossos modelos</div>
-    <h2 class="titulo">Qual toldo é<br /><em>o seu?</em></h2>
-    <p class="sub">Três modelos para cada necessidade. Todos fabricados sob medida, com lona de qualidade e estrutura durável.</p>
-  </div>
-  <div class="container">
-    <div class="produtos-grid">
-
-      <!-- toldo articulado -->
-      <div class="produto-card"> 
-       <div class="produto-img" style="background-image:url('toldos_pagina002.webp')"></div>
-        <div class="produto-overlay">
-          <!-- <p class="produto-num">RESIDENCIAL | COMERCIAL</p> -->
-          <h3 class="produto-nome">Toldo<br />Articulado</h3>
-          <p class="produto-desc">Ideal para varandas e áreas de lazer. Abre e fecha com facilidade, protege contra sol e chuva sem ocupar espaço quando recolhido.</p>
-          <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20Articulado%20e%20gostaria%20de%20um%20orçamento."
-             target="_blank" rel="noreferrer" class="produto-cta">
-            Pedir orçamento →
-          </a>
-        </div>
+    <div class="produtos-header">
+      <div>
+        <p class="section-label">Nossos produtos</p>
+        <h2 class="section-title">A solução certa<br>para cada espaço</h2>
       </div>
+      <p class="section-sub">
+        Fabricamos e instalamos toldos, coberturas e acessórios sob medida. Cada projeto é único — é assim que garantimos o encaixe perfeito.
+      </p>
+    </div>
 
-      <!-- toldo rolô -->
-      <div class="produto-card">
-        <div class="produto-img" style="background-image:url('toldos_pagina003.webp')"></div>
-        <div class="produto-overlay">
-          <!-- <p class="produto-num">Modelo 02</p> -->   
-          <h3 class="produto-nome">Toldo<br />Rolô</h3>
-          <p class="produto-desc">Perfeito para janelas e fachadas. Visual limpo e moderno, com acionamento manual ou motorizado.</p>
-          <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20Rolô%20e%20gostaria%20de%20um%20orçamento."
-             target="_blank" rel="noreferrer" class="produto-cta">
-            Pedir orçamento →
-          </a>
-        </div>
-      </div>
+    <div class="cards-grid">
 
-      <!-- toldo de braço -->
-      <div class="produto-card">
-        <div class="produto-img" style="background-image:url('professional-item1.jpg')"></div>
-        <div class="produto-overlay">
-          <!-- <p class="produto-num">Modelo 03</p> -->
-          <h3 class="produto-nome">Paleta de<br />Cores</h3>
-          <p class="produto-desc">O toldo de acordo com o seu ambiente, diversas cores e tons para que harmonize perfeitamente com a sua área.</p>
-          <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20em%20Toldo%20de%20Braço%20e%20gostaria%20de%20um%20orçamento."
-             target="_blank" rel="noreferrer" class="produto-cta">
-            Pedir orçamento →
-          </a>
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Capas%20de%20Piscina%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="toldos_pagina001.webp" alt="Capa de piscina sob medida" loading="lazy">
         </div>
-      </div>
+        <div class="card-body">
+          <span class="tag card-tag">Proteção</span>
+          <h3 class="card-title">Capas de Piscina</h3>
+          <p class="card-desc">Capas sob medida que protegem de folhas, sujeira e insetos. Reduzem evaporação e consumo de produtos químicos.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Toldos%20Residenciais%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="toldos_pagina002.webp" alt="Toldo articulado residencial" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Residencial</span>
+          <h3 class="card-title">Toldos Residenciais</h3>
+          <p class="card-desc">Toldos articulados, de braço reto e sob medida para varandas, janelas e fachadas. Proteção contra sol e chuva.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Coberturas%20e%20Sombra%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="toldos_pagina003.webp" alt="Cobertura de área externa" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Coberturas</span>
+          <h3 class="card-title">Coberturas e Sombra</h3>
+          <p class="card-desc">Sombreiros, lonas para pergolado e tendas sob medida. Transforma qualquer área aberta em espaço de lazer.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Policarbonato%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="toldos_pagina004.webp" alt="Cobertura em policarbonato" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Policarbonato</span>
+          <h3 class="card-title">Policarbonato</h3>
+          <p class="card-desc">Placas e perfis para coberturas com luz natural. Resistente, durável e com visual moderno para qualquer ambiente.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Telas%20de%20Prote%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="toldos_pagina005.webp" alt="Tela de proteção" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Telas</span>
+          <h3 class="card-title">Telas de Proteção</h3>
+          <p class="card-desc">Mosquiteiros e telas para janelas, portas e varandas. Mantém insetos e poeira do lado de fora com discrição.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20P%C3%A9rgola%20ou%20Cobertura%20Especial%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="foto_brasilverde.webp" alt="Pérgola e cobertura especial" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Coberturas</span>
+          <h3 class="card-title">Pérgola e Coberturas Especiais</h3>
+          <p class="card-desc">Coberturas robustas para grandes vãos e áreas de lazer. Arquitetura e proteção de alto padrão sob medida.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- DESTAQUE: TOLDO ARTICULADO -->
-<section class="destaque" id="articulado">
+<!-- COMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
   <div class="container">
-    <div class="eyebrow">Mais vendido</div>
-    <h2 class="titulo">Por que o articulado<br /><em>é o preferido?</em></h2>
+    <div class="como-grid">
+      <div>
+        <p class="section-label">Simples assim</p>
+        <h2 class="section-title">Do contato à<br>instalação em<br>3 passos</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Fale com a gente</h4>
+              <p>Mande uma mensagem no WhatsApp informando o produto de interesse e as medidas do seu espaço.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Receba o orçamento</h4>
+              <p>Nossa equipe envia o orçamento detalhado. Tudo sob medida, com opções de cor e material.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Produto entregue</h4>
+              <p>Fabricamos e entregamos em Ribeirão Preto e todo o Brasil. Qualidade garantida desde a origem.</p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-verde" style="margin-top:32px"
+           href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+           target="_blank" rel="noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="como-visual">
+        <img src="toldos_pagina002.webp" alt="Instalação de toldo Brasil Verde">
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais">
   <div class="container">
-    <div class="destaque-grid">
-      <div class="destaque-img" style="background-image:url('toldos_pagina001.webp')"></div>
-      <div class="destaque-info">
-        <p class="destaque-label">Toldo Articulado</p>
-        <h3>Conforto<br />sem obra.</h3>
-        <p>O toldo articulado é a solução mais prática para varandas e áreas externas. Sem necessidade de obra, com instalação rápida e resultado imediato — proteção no verão, vista livre no inverno.</p>
-        <ul class="destaque-items">
-          <li>Lona acrílica ou PVC em mais de 30 cores</li>
-          <li>Estrutura em alumínio ou aço galvanizado</li>
-          <li>Fabricação 100% sob medida para o seu espaço</li>
-          <li>Opção manual ou com motorização</li>
-          <li>Garantia de qualidade e suporte pós-instalação</li>
-        </ul>
-        <a href="https://wa.me/5516993303400?text=Olá!%20Tenho%20interesse%20no%20Toldo%20Articulado%20e%20gostaria%20de%20um%20orçamento."
-           target="_blank" rel="noreferrer" class="btn btn-verde" style="width:fit-content">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero este toldo
+    <div style="max-width:560px">
+      <p class="section-label">Por que Brasil Verde</p>
+      <h2 class="section-title">Quem fabrica,<br>entende</h2>
+      <p class="section-sub">Mais de 20 anos atendendo clientes em Ribeirão Preto e em todo o Brasil. Material de fábrica, sem intermediários.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Tudo sob medida</h4>
+        <p>Nenhum produto é padrão. Cada peça é fabricada para o seu espaço, com encaixe perfeito.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+        </div>
+        <h4>+30 cores de lona</h4>
+        <p>Do bege residencial ao personalizado para sua marca. Grande variedade para qualquer projeto.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Durabilidade garantida</h4>
+        <p>Lonas resistentes ao sol, chuva e vento. Material de fábrica com garantia de qualidade.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-1m10-1h2l2-3.5V9h-4v7zM1 9l3 1"/></svg>
+        </div>
+        <h4>Entrega para todo o Brasil</h4>
+        <p>Loja em Ribeirão Preto, entrega para todo o país. Mais de uma década de clientes satisfeitos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contato">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <div>
+        <h2>Pronto para transformar<br>seu espaço?</h2>
+        <p>Fale com nossa equipe e receba um orçamento sem compromisso.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-white"
+           href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20toldo%20ou%20cobertura."
+           target="_blank" rel="noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+5516993303400">
+          (16) 99330-3400
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section class="como" id="como-funciona">
-  <div class="container">
-    <div class="eyebrow">Do contato à instalação</div>
-    <h2 class="titulo">Simples assim.</h2>
-    <p class="sub">Sem visita técnica obrigatória, sem burocracia. Você manda a medida, a gente resolve.</p>
-    <div class="como-grid">
-      <div class="como-step">
-        <div class="como-step-num">01</div>
-        <div class="como-step-ico">💬</div>
-        <h4>Fale com a gente</h4>
-        <p>Mande uma mensagem no WhatsApp com o modelo de interesse e as medidas do espaço — largura e projeção.</p>
-      </div>
-      <div class="como-step">
-        <div class="como-step-num">02</div>
-        <div class="como-step-ico">📋</div>
-        <h4>Receba o orçamento</h4>
-        <p>Nossa equipe envia o orçamento detalhado com opções de cor, tecido e estrutura. Tudo por escrito.</p>
-      </div>
-      <div class="como-step">
-        <div class="como-step-num">03</div>
-        <div class="como-step-ico">🚚</div>
-        <h4>Entrega garantida</h4>
-        <p>Fabricamos e entregamos em Ribeirão Preto com instalação, ou enviamos para todo o Brasil.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- POR QUE NÓS -->
-<section class="porque" id="diferenciais">
-  <div class="container">
-    <div class="eyebrow">Por que Brasil Verde</div>
-    <h2 class="titulo" style="color:#fff">Quem fabrica,<br /><em>entende.</em></h2>
-    <p class="sub">Mais de 20 anos produzindo toldos para Ribeirão Preto e todo o Brasil.</p>
-    <div class="porque-grid">
-      <div class="porque-img" style="background-image:url('foto_brasilverde.webp')"></div>
-      <ul class="porque-lista">
-        <li class="porque-item">
-          <div class="porque-ico">📐</div>
-          <div>
-            <h5>100% sob medida</h5>
-            <p>Nenhuma peça é padrão. Cada toldo é fabricado para o seu espaço, com encaixe exato e acabamento profissional.</p>
-          </div>
-        </li>
-        <li class="porque-item">
-          <div class="porque-ico">🎨</div>
-          <div>
-            <h5>Mais de 30 cores</h5>
-            <p>Lona acrílica, PVC e microperfurada em toda a gama de cores. Do neutro ao personalizado para sua marca.</p>
-          </div>
-        </li>
-        <li class="porque-item">
-          <div class="porque-ico">🛡️</div>
-          <div>
-            <h5>Material de fábrica</h5>
-            <p>Trabalhamos com lonas e estruturas de procedência garantida. Resistência ao sol, chuva e vento comprovada.</p>
-          </div>
-        </li>
-        <li class="porque-item">
-          <div class="porque-ico">🚚</div>
-          <div>
-            <h5>Entregamos no Brasil todo</h5>
-            <p>Loja física em Ribeirão Preto, atendimento remoto e envio para qualquer estado. Orçamento rápido por WhatsApp.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <h2>Pronto para<br />instalar o seu?</h2>
-  <p>Orçamento gratuito, rápido e sem compromisso. Fale agora no WhatsApp.</p>
-  <div class="cta-btns">
-    <a href="https://wa.me/5516993303400?text=Olá!%20Quero%20um%20orçamento%20de%20toldo%20residencial."
-       target="_blank" rel="noreferrer" class="btn btn-preto">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar no WhatsApp
-    </a>
-    <a href="tel:+5516993303400" class="btn btn-branco">
-      (16) 99330-3400
-    </a>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="footer">
-  <a href="#" class="logo" aria-label="Brasil Verde Toldos">
-  <img 
-    src="/logo_brasilverde002.png" 
-    alt="Brasil Verde Toldos"
-    width="160"
-  >
-</a>
-  <div class="footer-info">
-    Toldos Residenciais sob Medida<br />
-    R. Amparo, 596 — Vila Mariana, Ribeirão Preto - SP
-  </div>
-  <div class="footer-contatos">
-    <a href="tel:+5516993303400">
-      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-      (16) 99330-3400
-    </a>
-    <a href="tel:+551636263901">
-      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-      (16) 3626-3901
-    </a>
-    <a href="mailto:contato@brasilverdelonas.com.br">
-      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      contato@brasilverdelonas.com.br
-    </a>
-  </div>
-  <div class="footer-links">
-    <a href="https://www.brasilverdelonas.com.br/contato">Contato</a>
-    <a href="https://www.brasilverdelonas.com.br/quem-somos">Quem Somos</a>
-    <a href="https://www.brasilverdelonas.com.br">Site Principal</a>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="logo_brasilverde002.png" alt="Brasil Verde Toldos">
+        </div>
+        <p class="footer-tagline">
+          Toldos e Coberturas em geral<br>
+          R. Amparo, 596 — Ribeirão Preto, SP<br>
+          (16) 99330-3400
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#produtos">Produtos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="tel:+5516993303400">(16) 99330-3400</a>
+        <a href="https://wa.me/5516993303400" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Brasil Verde Toldos. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <!-- WPP FLOAT -->
-<a href="https://wa.me/5516993303400?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20de%20toldo."
-   target="_blank" rel="noreferrer" class="wpp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="wpp-float"
+   href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
+   target="_blank" rel="noreferrer"
+   aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 </body>
