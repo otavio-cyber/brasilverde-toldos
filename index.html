@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brasil Verde Toldos — Toldos e Coberturas em Ribeirão Preto</title>
-<meta name="description" content="Toldos, coberturas e capas de piscina sob medida em Ribeirão Preto. Atendemos todo o Brasil. Solicite um orçamento pelo WhatsApp.">
+<meta name="description" content="Toldos articulados, coberturas e capas de piscina sob medida em Ribeirão Preto. +30 cores. Atendemos todo o Brasil. Orçamento pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,18 +36,25 @@
   }
   a { color: inherit; text-decoration: none; }
   img { display: block; max-width: 100%; }
-
-  /* ── UTILITÁRIOS ────────────────────────────────────────── */
   .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-  .tag {
-    display: inline-block;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: .1em; text-transform: uppercase;
-    color: var(--verde);
-    background: rgba(58,173,60,.09);
-    border-radius: 4px;
-    padding: 4px 10px;
+
+  /* ── BOTÕES ─────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: inherit; font-weight: 700; font-size: 14px;
+    border: none; cursor: pointer; border-radius: var(--radius);
+    padding: 14px 24px; transition: all .2s; text-decoration: none;
   }
+  .btn-verde { background: var(--verde); color: #fff; }
+  .btn-verde:hover { background: var(--verde-d); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--texto); border: 1.5px solid var(--borda); }
+  .btn-outline:hover { border-color: var(--verde); color: var(--verde); }
+  .btn-white { background: #fff; color: var(--verde-d); font-weight: 800; }
+  .btn-white:hover { background: var(--off); transform: translateY(-1px); }
+  .btn-ghost { background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.35); }
+  .btn-ghost:hover { background: rgba(255,255,255,.25); }
+
+  /* ── TIPOGRAFIA SECTION ──────────────────────────────────── */
   .section-label {
     font-size: 11px; font-weight: 700;
     letter-spacing: .14em; text-transform: uppercase;
@@ -60,22 +67,15 @@
   }
   .section-sub {
     font-size: 1rem; color: var(--cinza);
-    line-height: 1.7; max-width: 520px;
-    margin-top: 14px;
+    line-height: 1.7; max-width: 520px; margin-top: 14px;
   }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: inherit; font-weight: 700; font-size: 14px;
-    border: none; cursor: pointer; border-radius: var(--radius);
-    padding: 14px 24px; transition: all .2s; text-decoration: none;
+  .tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--verde); background: rgba(58,173,60,.09);
+    border-radius: 4px; padding: 4px 10px;
   }
-  .btn-verde { background: var(--verde); color: #fff; }
-  .btn-verde:hover { background: var(--verde-d); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent; color: var(--texto);
-    border: 1.5px solid var(--borda);
-  }
-  .btn-outline:hover { border-color: var(--verde); color: var(--verde); }
 
   /* ── HEADER ─────────────────────────────────────────────── */
   .header {
@@ -89,29 +89,16 @@
     gap: 32px; height: 72px;
     max-width: var(--max); margin: 0 auto; padding: 0 24px;
   }
-  .header-logo { flex-shrink: 0; }
   .header-logo img { height: 44px; width: auto; }
-  .header-nav {
-    display: flex; align-items: center; gap: 28px;
-    margin-left: auto;
-  }
-  .header-nav a {
-    font-size: 13.5px; font-weight: 500; color: var(--cinza);
-    transition: color .2s;
-  }
+  .header-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+  .header-nav a { font-size: 13.5px; font-weight: 500; color: var(--cinza); transition: color .2s; }
   .header-nav a:hover { color: var(--texto); }
-  .header-cta { margin-left: 8px; }
 
   /* ── HERO ────────────────────────────────────────────────── */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 580px;
-  }
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
   .hero-left {
     background: var(--off);
-    display: flex; flex-direction: column;
-    justify-content: center;
+    display: flex; flex-direction: column; justify-content: center;
     padding: 80px 64px 80px 40px;
   }
   .hero-eyebrow {
@@ -121,116 +108,63 @@
     color: var(--cinza); margin-bottom: 24px;
   }
   .hero-eyebrow::before {
-    content: '';
-    display: block; width: 24px; height: 2px;
-    background: var(--verde);
+    content: ''; display: block; width: 24px; height: 2px; background: var(--verde);
   }
   .hero-h1 {
     font-size: clamp(2.4rem, 4.5vw, 3.6rem);
     font-weight: 800; line-height: 1.1;
-    letter-spacing: -.04em; color: var(--texto);
-    margin-bottom: 20px;
+    letter-spacing: -.04em; color: var(--texto); margin-bottom: 20px;
   }
   .hero-h1 em { color: var(--verde); font-style: normal; }
-  .hero-desc {
-    font-size: 1rem; color: var(--cinza);
-    line-height: 1.7; max-width: 420px;
-    margin-bottom: 36px;
-  }
+  .hero-desc { font-size: 1rem; color: var(--cinza); line-height: 1.7; max-width: 420px; margin-bottom: 36px; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .hero-stats {
     display: flex; gap: 32px;
-    margin-top: 48px; padding-top: 32px;
-    border-top: 1px solid var(--borda);
+    margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--borda);
   }
-  .hero-stat-num {
-    font-size: 1.6rem; font-weight: 800;
-    color: var(--texto); letter-spacing: -.03em;
-  }
-  .hero-stat-label {
-    font-size: 11px; color: var(--cinza);
-    text-transform: uppercase; letter-spacing: .07em;
-    margin-top: 2px;
-  }
-  .hero-right {
-    position: relative; overflow: hidden;
-    min-height: 500px;
-  }
-  .hero-right img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-  }
+  .hero-stat-num { font-size: 1.6rem; font-weight: 800; color: var(--texto); letter-spacing: -.03em; }
+  .hero-stat-label { font-size: 11px; color: var(--cinza); text-transform: uppercase; letter-spacing: .07em; margin-top: 2px; }
+  .hero-right { position: relative; overflow: hidden; min-height: 500px; }
+  .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .hero-badge {
     position: absolute; bottom: 28px; left: 28px;
     background: #fff; border-radius: var(--radius);
-    padding: 14px 20px;
-    box-shadow: var(--sombra-md);
+    padding: 14px 20px; box-shadow: var(--sombra-md);
     display: flex; align-items: center; gap: 12px;
   }
   .hero-badge-dot {
     width: 10px; height: 10px; border-radius: 50%;
-    background: var(--verde);
-    box-shadow: 0 0 0 3px rgba(58,173,60,.2);
+    background: var(--verde); box-shadow: 0 0 0 3px rgba(58,173,60,.2);
   }
   .hero-badge span { font-size: 13px; font-weight: 600; color: var(--texto); }
 
-  /* ── GALERIA HERO ────────────────────────────────────────── */
-  .galeria { background: var(--branco); padding: 48px 0; }
-  .galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-  .galeria-item {
-    aspect-ratio: 4/3; overflow: hidden;
-    border-radius: var(--radius);
-  }
-  .galeria-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform .4s ease;
-  }
-  .galeria-item:hover img { transform: scale(1.05); }
+  /* ── GALERIA TIRA ────────────────────────────────────────── */
+  .galeria { background: var(--branco); padding: 0; overflow: hidden; }
+  .galeria-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+  .galeria-item { aspect-ratio: 4/3; overflow: hidden; }
+  .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .galeria-item:hover img { transform: scale(1.06); }
 
   /* ── PRODUTOS ────────────────────────────────────────────── */
   .produtos { background: var(--off); padding: 96px 0; }
   .produtos-header {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 32px; align-items: end;
-    margin-bottom: 56px;
+    gap: 32px; align-items: end; margin-bottom: 56px;
   }
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .card {
-    background: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
+    background: var(--branco); border: 1px solid var(--borda);
+    border-radius: var(--radius-lg); overflow: hidden;
     transition: box-shadow .25s, transform .25s;
-    cursor: pointer;
-    text-decoration: none; color: inherit;
-    display: block;
+    text-decoration: none; color: inherit; display: block;
   }
-  .card:hover {
-    box-shadow: var(--sombra-md);
-    transform: translateY(-3px);
-  }
+  .card:hover { box-shadow: var(--sombra-md); transform: translateY(-3px); }
   .card-img { aspect-ratio: 4/3; overflow: hidden; }
-  .card-img img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform .45s ease;
-  }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
   .card:hover .card-img img { transform: scale(1.04); }
   .card-body { padding: 24px; }
   .card-tag { margin-bottom: 10px; }
-  .card-title {
-    font-size: 1.1rem; font-weight: 700;
-    color: var(--texto); margin-bottom: 8px;
-    letter-spacing: -.02em;
-  }
+  .card-title { font-size: 1.1rem; font-weight: 700; color: var(--texto); margin-bottom: 8px; letter-spacing: -.02em; }
   .card-desc { font-size: 13px; color: var(--cinza); line-height: 1.6; }
   .card-cta {
     display: flex; align-items: center; gap: 6px;
@@ -239,62 +173,53 @@
   }
   .card:hover .card-cta { gap: 10px; }
 
-  /* ── COMO FUNCIONA ───────────────────────────────────────── */
-  .como-funciona { background: var(--branco); padding: 96px 0; }
-  .como-grid {
+  /* ── CORES SECTION ───────────────────────────────────────── */
+  .cores-section { background: var(--branco); padding: 96px 0; }
+  .cores-inner {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center;
   }
-  .steps { margin-top: 40px; display: flex; flex-direction: column; }
-  .step {
-    display: flex; gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--borda);
+  .cores-visual { border-radius: var(--radius-lg); overflow: hidden; }
+  .cores-visual img { width: 100%; height: 420px; object-fit: cover; }
+  .cores-content { padding: 0; }
+  .cores-chips {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; margin-bottom: 32px;
   }
-  .step:first-child { border-top: 1px solid var(--borda); }
-  .step-num {
-    flex-shrink: 0;
-    width: 36px; height: 36px; border-radius: 50%;
-    background: var(--verde); color: #fff;
-    font-size: 13px; font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .step-body h4 {
-    font-size: 15px; font-weight: 700;
-    color: var(--texto); margin-bottom: 6px;
-  }
-  .step-body p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
-  .como-visual {
-    border-radius: var(--radius-lg); overflow: hidden;
-  }
-  .como-visual img {
-    width: 100%; height: 460px; object-fit: cover;
+  .chip {
+    font-size: 12px; font-weight: 600; color: var(--cinza);
+    background: var(--off); border: 1px solid var(--borda);
+    border-radius: 100px; padding: 6px 14px;
   }
 
-  /* ── DIFERENCIAIS ────────────────────────────────────────── */
-  .diferenciais { background: var(--off); padding: 96px 0; }
-  .diff-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px; margin-top: 56px;
+  /* ── COMO FUNCIONA ───────────────────────────────────────── */
+  .como-funciona { background: var(--off); padding: 96px 0; }
+  .como-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .steps { margin-top: 40px; display: flex; flex-direction: column; }
+  .step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--borda); }
+  .step:first-child { border-top: 1px solid var(--borda); }
+  .step-num {
+    flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+    background: var(--verde); color: #fff; font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
   }
+  .step-body h4 { font-size: 15px; font-weight: 700; color: var(--texto); margin-bottom: 6px; }
+  .step-body p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .como-visual { border-radius: var(--radius-lg); overflow: hidden; }
+  .como-visual img { width: 100%; height: 460px; object-fit: cover; }
+
+  /* ── DIFERENCIAIS ────────────────────────────────────────── */
+  .diferenciais { background: var(--branco); padding: 96px 0; }
+  .diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
   .diff-card {
-    background: var(--branco);
-    border-radius: var(--radius-lg);
-    padding: 32px 28px;
-    border-top: 3px solid var(--verde);
+    background: var(--off); border-radius: var(--radius-lg);
+    padding: 32px 28px; border-top: 3px solid var(--verde);
   }
   .diff-icon {
-    width: 44px; height: 44px;
-    background: rgba(58,173,60,.1);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; background: rgba(58,173,60,.1);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
     margin-bottom: 20px; color: var(--verde);
   }
-  .diff-card h4 {
-    font-size: 15px; font-weight: 700;
-    color: var(--texto); margin-bottom: 8px;
-  }
+  .diff-card h4 { font-size: 15px; font-weight: 700; color: var(--texto); margin-bottom: 8px; }
   .diff-card p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
 
   /* ── CTA BANNER ──────────────────────────────────────────── */
@@ -305,24 +230,12 @@
   }
   .cta-banner h2 {
     font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    font-weight: 800; color: #fff;
-    letter-spacing: -.03em; line-height: 1.15;
+    font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.15;
   }
   .cta-banner p { font-size: 15px; color: rgba(255,255,255,.8); margin-top: 8px; }
-  .btn-white { background: #fff; color: var(--verde-d); font-weight: 800; }
-  .btn-white:hover { background: var(--off); transform: translateY(-1px); }
-  .btn-ghost {
-    background: rgba(255,255,255,.15); color: #fff;
-    border: 1.5px solid rgba(255,255,255,.35);
-  }
-  .btn-ghost:hover { background: rgba(255,255,255,.25); }
 
   /* ── FOOTER ──────────────────────────────────────────────── */
-  .footer {
-    background: var(--branco);
-    border-top: 1px solid var(--borda);
-    padding: 48px 0 32px;
-  }
+  .footer { background: var(--branco); border-top: 1px solid var(--borda); padding: 48px 0 32px; }
   .footer-inner {
     display: flex; align-items: flex-start;
     justify-content: space-between; gap: 40px; flex-wrap: wrap;
@@ -330,15 +243,11 @@
   .footer-logo img { height: 40px; width: auto; margin-bottom: 12px; }
   .footer-tagline { font-size: 13px; color: var(--cinza); line-height: 1.6; }
   .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
-  .footer-links a {
-    font-size: 13px; color: var(--cinza); font-weight: 500;
-    transition: color .2s;
-  }
+  .footer-links a { font-size: 13px; color: var(--cinza); font-weight: 500; transition: color .2s; }
   .footer-links a:hover { color: var(--texto); }
   .footer-copy {
-    text-align: center; margin-top: 32px;
-    padding-top: 24px; border-top: 1px solid var(--borda);
-    font-size: 12px; color: var(--cinza);
+    text-align: center; margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid var(--borda); font-size: 12px; color: var(--cinza);
   }
 
   /* ── WPP FLOAT ───────────────────────────────────────────── */
@@ -352,16 +261,17 @@
   }
   .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
 
-  /* ── MOBILE ──────────────────────────────────────────────── */
+  /* ── RESPONSIVE ──────────────────────────────────────────── */
   @media (max-width: 900px) {
     .header-nav { display: none; }
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 64px 24px; }
-    .hero-right { min-height: 320px; }
+    .hero-right { min-height: 340px; }
     .galeria-grid { grid-template-columns: repeat(3, 1fr); }
     .galeria-item:nth-child(n+4) { display: none; }
     .produtos-header { grid-template-columns: 1fr; }
     .cards-grid { grid-template-columns: 1fr 1fr; }
+    .cores-inner { grid-template-columns: 1fr; gap: 40px; }
     .como-grid { grid-template-columns: 1fr; gap: 40px; }
     .como-visual { display: none; }
     .diff-grid { grid-template-columns: 1fr 1fr; }
@@ -380,21 +290,27 @@
 </head>
 <body>
 
+<!-- WPP ICON SVG helper -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="wpp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+</svg>
+
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <a class="header-logo" href="/" aria-label="Brasil Verde Toldos — início">
       <img src="logo_brasilverde002.png" alt="Brasil Verde Toldos">
     </a>
-    <nav class="header-nav" aria-label="Navegação">
+    <nav class="header-nav">
       <a href="#produtos">Produtos</a>
+      <a href="#cores">Cores</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="btn btn-verde header-cta"
+    <a class="btn btn-verde" style="margin-left:auto"
        href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
        target="_blank" rel="noreferrer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <svg width="16" height="16" aria-hidden="true"><use href="#wpp"/></svg>
       Pedir orçamento
     </a>
   </div>
@@ -403,20 +319,20 @@
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-left">
-    <p class="hero-eyebrow">Ribeirão Preto · Atendemos todo o Brasil</p>
+    <p class="hero-eyebrow">Ribeirão Preto · Todo o Brasil</p>
     <h1 class="hero-h1">
       Toldos e coberturas<br>
-      que <em>transformam</em><br>
+      que <em>valorizam</em><br>
       seu espaço
     </h1>
     <p class="hero-desc">
-      Soluções sob medida para sua casa: toldos, capas de piscina, policarbonato e coberturas com instalação profissional e garantia de qualidade.
+      Soluções sob medida para casa e comércio: toldos articulados, capas de piscina, policarbonato e coberturas com instalação profissional.
     </p>
     <div class="hero-actions">
       <a class="btn btn-verde"
          href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20toldo%20ou%20cobertura."
          target="_blank" rel="noreferrer">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg width="16" height="16" aria-hidden="true"><use href="#wpp"/></svg>
         Solicitar orçamento
       </a>
       <a class="btn btn-outline" href="#produtos">Ver produtos</a>
@@ -432,12 +348,13 @@
       </div>
       <div>
         <div class="hero-stat-num">BR</div>
-        <div class="hero-stat-label">Entregamos no Brasil todo</div>
+        <div class="hero-stat-label">Entrega nacional</div>
       </div>
     </div>
   </div>
   <div class="hero-right">
-    <img src="foto_brasilverde.webp" alt="Trabalho Brasil Verde Toldos">
+    <!-- toldo articulado de alto padrão com piscina — imagem impactante -->
+    <img src="residencial-01.png" alt="Toldo articulado residencial com piscina" fetchpriority="high">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
       <span>Orçamento grátis pelo WhatsApp</span>
@@ -445,16 +362,14 @@
   </div>
 </section>
 
-<!-- GALERIA DE TRABALHOS -->
-<section class="galeria">
-  <div class="container">
-    <div class="galeria-grid">
-      <div class="galeria-item"><img src="toldos_pagina001.webp" alt="Trabalho Brasil Verde 1" loading="lazy"></div>
-      <div class="galeria-item"><img src="toldos_pagina002.webp" alt="Trabalho Brasil Verde 2" loading="lazy"></div>
-      <div class="galeria-item"><img src="toldos_pagina003.webp" alt="Trabalho Brasil Verde 3" loading="lazy"></div>
-      <div class="galeria-item"><img src="toldos_pagina004.webp" alt="Trabalho Brasil Verde 4" loading="lazy"></div>
-      <div class="galeria-item"><img src="toldos_pagina005.webp" alt="Trabalho Brasil Verde 5" loading="lazy"></div>
-    </div>
+<!-- GALERIA TIRA — trabalhos reais -->
+<section class="galeria" aria-label="Galeria de projetos">
+  <div class="galeria-grid">
+    <div class="galeria-item"><img src="residencial-02.png" alt="Toldo residencial" loading="lazy"></div>
+    <div class="galeria-item"><img src="articulacao-01.png" alt="Toldo articulado" loading="lazy"></div>
+    <div class="galeria-item"><img src="comercial-01.png"  alt="Toldo comercial restaurante" loading="lazy"></div>
+    <div class="galeria-item"><img src="fachada-01.png"    alt="Toldo em fachada comercial" loading="lazy"></div>
+    <div class="galeria-item"><img src="comercial-02.png"  alt="Toldo para terraço" loading="lazy"></div>
   </div>
 </section>
 
@@ -467,22 +382,22 @@
         <h2 class="section-title">A solução certa<br>para cada espaço</h2>
       </div>
       <p class="section-sub">
-        Fabricamos e instalamos toldos, coberturas e acessórios sob medida. Cada projeto é único — é assim que garantimos o encaixe perfeito.
+        Fabricamos e instalamos sob medida. Cada projeto é único — garantimos encaixe perfeito e acabamento de qualidade.
       </p>
     </div>
 
     <div class="cards-grid">
 
       <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Capas%20de%20Piscina%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20Articulado."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="toldos_pagina001.webp" alt="Capa de piscina sob medida" loading="lazy">
+          <img src="articulacao-02.png" alt="Toldo articulado de braço" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="tag card-tag">Proteção</span>
-          <h3 class="card-title">Capas de Piscina</h3>
-          <p class="card-desc">Capas sob medida que protegem de folhas, sujeira e insetos. Reduzem evaporação e consumo de produtos químicos.</p>
+          <span class="tag card-tag">Mais popular</span>
+          <h3 class="card-title">Toldos Articulados</h3>
+          <p class="card-desc">Toldos de braço recolhível, ideais para varandas e sacadas. Proteção total com praticidade na abertura e fechamento.</p>
           <div class="card-cta">
             Pedir orçamento
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -491,15 +406,15 @@
       </a>
 
       <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Toldos%20Residenciais%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20Residencial."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="toldos_pagina002.webp" alt="Toldo articulado residencial" loading="lazy">
+          <img src="residencial-03.png" alt="Toldo residencial" loading="lazy">
         </div>
         <div class="card-body">
           <span class="tag card-tag">Residencial</span>
           <h3 class="card-title">Toldos Residenciais</h3>
-          <p class="card-desc">Toldos articulados, de braço reto e sob medida para varandas, janelas e fachadas. Proteção contra sol e chuva.</p>
+          <p class="card-desc">Toldos fixos e móveis para varandas, janelas e fachadas. Protegem do sol e da chuva sem perder o visual da casa.</p>
           <div class="card-cta">
             Pedir orçamento
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -508,15 +423,49 @@
       </a>
 
       <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Coberturas%20e%20Sombra%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20Comercial."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="toldos_pagina003.webp" alt="Cobertura de área externa" loading="lazy">
+          <img src="comercial-03.png" alt="Toldo comercial" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Comercial</span>
+          <h3 class="card-title">Toldos Comerciais</h3>
+          <p class="card-desc">Para fachadas de lojas, restaurantes e terraços. Ampliam o espaço útil e valorizam a identidade visual do negócio.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Capa%20de%20Piscina."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="residencial-02.png" alt="Capa de piscina" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag card-tag">Proteção</span>
+          <h3 class="card-title">Capas de Piscina</h3>
+          <p class="card-desc">Capas sob medida que protegem de folhas e insetos, reduzem evaporação e diminuem o gasto com produtos químicos.</p>
+          <div class="card-cta">
+            Pedir orçamento
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="card"
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Cobertura%20e%20Sombra."
+         target="_blank" rel="noreferrer">
+        <div class="card-img">
+          <img src="fachada-02.png" alt="Cobertura e sombra" loading="lazy">
         </div>
         <div class="card-body">
           <span class="tag card-tag">Coberturas</span>
           <h3 class="card-title">Coberturas e Sombra</h3>
-          <p class="card-desc">Sombreiros, lonas para pergolado e tendas sob medida. Transforma qualquer área aberta em espaço de lazer.</p>
+          <p class="card-desc">Pergolados, sombreiros e lonas para área de lazer. Transforma espaço aberto em ambiente confortável o ano todo.</p>
           <div class="card-cta">
             Pedir orçamento
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -525,15 +474,15 @@
       </a>
 
       <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Policarbonato%20e%20gostaria%20de%20um%20or%C3%A7amento."
+         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20de%20Toldo%20para%20Fachada."
          target="_blank" rel="noreferrer">
         <div class="card-img">
-          <img src="toldos_pagina004.webp" alt="Cobertura em policarbonato" loading="lazy">
+          <img src="fachada-03.png" alt="Toldo para fachada" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="tag card-tag">Policarbonato</span>
-          <h3 class="card-title">Policarbonato</h3>
-          <p class="card-desc">Placas e perfis para coberturas com luz natural. Resistente, durável e com visual moderno para qualquer ambiente.</p>
+          <span class="tag card-tag">Fachadas</span>
+          <h3 class="card-title">Toldos para Fachadas</h3>
+          <p class="card-desc">Toldos fixos com estrutura metálica para fachadas de lojas e edifícios. Durabilidade e presença visual garantidas.</p>
           <div class="card-cta">
             Pedir orçamento
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -541,40 +490,41 @@
         </div>
       </a>
 
-      <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Telas%20de%20Prote%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento."
-         target="_blank" rel="noreferrer">
-        <div class="card-img">
-          <img src="toldos_pagina005.webp" alt="Tela de proteção" loading="lazy">
-        </div>
-        <div class="card-body">
-          <span class="tag card-tag">Telas</span>
-          <h3 class="card-title">Telas de Proteção</h3>
-          <p class="card-desc">Mosquiteiros e telas para janelas, portas e varandas. Mantém insetos e poeira do lado de fora com discrição.</p>
-          <div class="card-cta">
-            Pedir orçamento
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
-        </div>
-      </a>
+    </div>
+  </div>
+</section>
 
-      <a class="card"
-         href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Tenho%20interesse%20em%20P%C3%A9rgola%20ou%20Cobertura%20Especial%20e%20gostaria%20de%20um%20or%C3%A7amento."
-         target="_blank" rel="noreferrer">
-        <div class="card-img">
-          <img src="foto_brasilverde.webp" alt="Pérgola e cobertura especial" loading="lazy">
+<!-- CORES -->
+<section class="cores-section" id="cores">
+  <div class="container">
+    <div class="cores-inner">
+      <div class="cores-visual">
+        <img src="cores-01.png" alt="Amostras de cores de lona disponíveis" loading="lazy">
+      </div>
+      <div class="cores-content">
+        <p class="section-label">Variedade de cores</p>
+        <h2 class="section-title">+30 cores para o seu estilo</h2>
+        <p class="section-sub">
+          Do clássico bege ao verde floresta, do grafite ao listrado. Temos a paleta certa para combinar com sua fachada ou decoração.
+        </p>
+        <div class="cores-chips">
+          <span class="chip">Bege</span>
+          <span class="chip">Branco</span>
+          <span class="chip">Grafite</span>
+          <span class="chip">Terracota</span>
+          <span class="chip">Verde</span>
+          <span class="chip">Azul marinho</span>
+          <span class="chip">Listrado</span>
+          <span class="chip">Chumbo</span>
+          <span class="chip">E muito mais…</span>
         </div>
-        <div class="card-body">
-          <span class="tag card-tag">Coberturas</span>
-          <h3 class="card-title">Pérgola e Coberturas Especiais</h3>
-          <p class="card-desc">Coberturas robustas para grandes vãos e áreas de lazer. Arquitetura e proteção de alto padrão sob medida.</p>
-          <div class="card-cta">
-            Pedir orçamento
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
-        </div>
-      </a>
-
+        <a class="btn btn-verde"
+           href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20cores%20de%20lona%20dispon%C3%ADveis."
+           target="_blank" rel="noreferrer">
+          <svg width="16" height="16" aria-hidden="true"><use href="#wpp"/></svg>
+          Ver catálogo de cores
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -591,33 +541,33 @@
             <div class="step-num">1</div>
             <div class="step-body">
               <h4>Fale com a gente</h4>
-              <p>Mande uma mensagem no WhatsApp informando o produto de interesse e as medidas do seu espaço.</p>
+              <p>Mande mensagem no WhatsApp com o produto de interesse e as medidas do espaço. Atendemos por texto, foto ou vídeo.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
               <h4>Receba o orçamento</h4>
-              <p>Nossa equipe envia o orçamento detalhado. Tudo sob medida, com opções de cor e material.</p>
+              <p>Enviamos orçamento detalhado com opções de material, cor e estrutura — tudo sob medida para o seu espaço.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>Produto entregue</h4>
-              <p>Fabricamos e entregamos em Ribeirão Preto e todo o Brasil. Qualidade garantida desde a origem.</p>
+              <h4>Produto fabricado e entregue</h4>
+              <p>Fabricamos em Ribeirão Preto e entregamos em todo o Brasil. Instalação disponível na região.</p>
             </div>
           </div>
         </div>
         <a class="btn btn-verde" style="margin-top:32px"
            href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
            target="_blank" rel="noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <svg width="16" height="16" aria-hidden="true"><use href="#wpp"/></svg>
           Falar no WhatsApp
         </a>
       </div>
       <div class="como-visual">
-        <img src="toldos_pagina002.webp" alt="Instalação de toldo Brasil Verde">
+        <img src="articulacao-01.png" alt="Detalhe de toldo articulado instalado" loading="lazy">
       </div>
     </div>
   </div>
@@ -628,8 +578,8 @@
   <div class="container">
     <div style="max-width:560px">
       <p class="section-label">Por que Brasil Verde</p>
-      <h2 class="section-title">Quem fabrica,<br>entende</h2>
-      <p class="section-sub">Mais de 20 anos atendendo clientes em Ribeirão Preto e em todo o Brasil. Material de fábrica, sem intermediários.</p>
+      <h2 class="section-title">Quem fabrica,<br>entende o produto</h2>
+      <p class="section-sub">Mais de 20 anos atendendo Ribeirão Preto e todo o Brasil. Sem intermediários — direto da fábrica para o seu espaço.</p>
     </div>
     <div class="diff-grid">
       <div class="diff-card">
@@ -637,28 +587,28 @@
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
         <h4>Tudo sob medida</h4>
-        <p>Nenhum produto é padrão. Cada peça é fabricada para o seu espaço, com encaixe perfeito.</p>
+        <p>Nenhum produto é padrão. Cada peça é fabricada para o seu espaço com encaixe e acabamento perfeitos.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
         </div>
-        <h4>+30 cores de lona</h4>
-        <p>Do bege residencial ao personalizado para sua marca. Grande variedade para qualquer projeto.</p>
+        <h4>+30 cores disponíveis</h4>
+        <p>Ampla paleta de cores e tecidos para combinar com qualquer fachada, varanda ou estilo de decoração.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
         <h4>Durabilidade garantida</h4>
-        <p>Lonas resistentes ao sol, chuva e vento. Material de fábrica com garantia de qualidade.</p>
+        <p>Lonas e estruturas resistentes ao sol e chuva intensos do interior paulista. Material selecionado com garantia.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-1m10-1h2l2-3.5V9h-4v7zM1 9l3 1"/></svg>
         </div>
         <h4>Entrega para todo o Brasil</h4>
-        <p>Loja em Ribeirão Preto, entrega para todo o país. Mais de uma década de clientes satisfeitos.</p>
+        <p>Fabricamos em Ribeirão Preto e enviamos para qualquer estado. Rápido, seguro e com embalagem adequada.</p>
       </div>
     </div>
   </div>
@@ -676,12 +626,10 @@
         <a class="btn btn-white"
            href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20toldo%20ou%20cobertura."
            target="_blank" rel="noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <svg width="18" height="18" aria-hidden="true"><use href="#wpp"/></svg>
           Falar no WhatsApp
         </a>
-        <a class="btn btn-ghost" href="tel:+5516993303400">
-          (16) 99330-3400
-        </a>
+        <a class="btn btn-ghost" href="tel:+5516993303400">(16) 99330-3400</a>
       </div>
     </div>
   </div>
@@ -703,6 +651,7 @@
       </div>
       <div class="footer-links">
         <a href="#produtos">Produtos</a>
+        <a href="#cores">Cores</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="tel:+5516993303400">(16) 99330-3400</a>
         <a href="https://wa.me/5516993303400" target="_blank" rel="noreferrer">WhatsApp</a>
@@ -715,9 +664,8 @@
 <!-- WPP FLOAT -->
 <a class="wpp-float"
    href="https://wa.me/5516993303400?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
-   target="_blank" rel="noreferrer"
-   aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+   target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" aria-hidden="true"><use href="#wpp"/></svg>
 </a>
 
 </body>
