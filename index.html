@@ -81,32 +81,17 @@
 
   /* ── HEADER ─────────────────────────────────────────────── */
   .header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    background: rgba(18,18,16,0);
-    backdrop-filter: blur(0px);
-    border-bottom: 1px solid transparent;
-    transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease;
-  }
-  .header.scrolled {
+    position: sticky; top: 0; z-index: 100;
     background: rgba(18,18,16,.92);
     backdrop-filter: blur(10px);
-    border-bottom-color: rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255,255,255,.07);
   }
   .header-inner {
     display: flex; align-items: center;
     gap: 32px; height: 68px;
     max-width: var(--max); margin: 0 auto; padding: 0 24px;
   }
-  .header-logo {
-    opacity: 0; transform: translateY(-4px);
-    transition: opacity .3s ease, transform .3s ease;
-    pointer-events: none;
-  }
-  .header.scrolled .header-logo {
-    opacity: 1; transform: translateY(0);
-    pointer-events: auto;
-  }
-  .header-logo img { height: 36px; width: auto; }
+  .header-logo img { height: 40px; width: auto; }
   .header-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
   .header-nav a { font-size: 13px; font-weight: 400; color: rgba(255,255,255,.65); transition: color .2s; letter-spacing: .02em; }
   .header-nav a:hover { color: rgba(255,255,255,1); }
@@ -149,21 +134,6 @@
     position: relative; z-index: 2;
     max-width: var(--max); width: 100%;
     margin: 0 auto; padding: 0 40px 80px;
-  }
-  /* Logo fixo no canto superior direito do hero (desktop) */
-  .hero-logo {
-    position: absolute; top: 32px; right: 40px; z-index: 3;
-    width: clamp(160px, 18vw, 240px);
-    opacity: .88;
-    filter: drop-shadow(0 2px 12px rgba(0,0,0,.4));
-    display: block;
-  }
-  /* Logo acima do H1 — só mobile */
-  .hero-logo-mobile {
-    display: none;
-    width: 180px; margin-bottom: 24px;
-    opacity: .92;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
   }
   .hero-eyebrow {
     display: flex; align-items: center; gap: 10px;
@@ -333,8 +303,6 @@
     .header-nav { display: none; }
     .hero { min-height: 100svh; align-items: flex-end; }
     .hero-content { padding: 0 20px 56px; }
-    .hero-logo { display: none; }
-    .hero-logo-mobile { display: block; }
     .galeria-grid { grid-template-columns: repeat(3, 1fr); }
     .galeria-item:nth-child(n+4) { display: none; }
     .produtos-header { grid-template-columns: 1fr; }
@@ -392,12 +360,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-overlay-bottom"></div>
 
-  <!-- Logo hero: canto superior direito (desktop) -->
-  <img class="hero-logo" src="logo-mogiana-white.png" alt="Toldos Mogiana">
-
   <div class="hero-content">
-    <!-- Logo mobile: acima do H1 -->
-    <img class="hero-logo-mobile" src="logo-mogiana-white.png" alt="Toldos Mogiana">
     <p class="hero-eyebrow">Ribeirão Preto · Todo o Brasil</p>
     <h1 class="hero-h1">
       Toldos e coberturas<br>
@@ -737,20 +700,6 @@
     <p class="footer-copy">© 2026 Toldos Mogiana. Todos os direitos reservados.</p>
   </div>
 </footer>
-
-<!-- SCROLL: header aparece ao rolar além do hero -->
-<script>
-(function(){
-  var header = document.querySelector('.header');
-  var hero   = document.querySelector('.hero');
-  function onScroll(){
-    var threshold = hero ? hero.offsetHeight * 0.25 : 120;
-    header.classList.toggle('scrolled', window.scrollY > threshold);
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-</script>
 
 <!-- WPP FLOAT -->
 <a class="wpp-float"
